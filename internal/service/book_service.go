@@ -16,7 +16,7 @@ func NewBookService(repo domain.BookRepository) *BookService {
 
 func (s *BookService) CreateBook(book *domain.Book) (*domain.Book, error) {
 	if book.Author == "" || book.Name == "" {
-		return nil, errors.New("author and/or title can't be emplty")
+		return nil, errors.New("author and/or title can't be empty")
 	}
 	return s.repo.Create(book)
 }
