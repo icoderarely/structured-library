@@ -20,3 +20,15 @@ func (s *BookService) CreateBook(book *domain.Book) (*domain.Book, error) {
 	}
 	return s.repo.Create(book)
 }
+
+func (s *BookService) GetBook(id int) (*domain.Book, error) {
+	return s.repo.GetById(id)
+}
+
+func (s *BookService) GetBooks() ([]*domain.Book, error) {
+	return s.repo.List()
+}
+
+func (s *BookService) DeleteBook(id int) error {
+	return s.repo.Delete(id)
+}
